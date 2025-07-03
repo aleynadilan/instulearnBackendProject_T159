@@ -6,7 +6,7 @@ Feature: As an administrator, I want to be able to delete course category inform
 
     * The api user constructs the base url with the "admin" token.
     # Api kullanicisi "admin" token ile base urli olusturur
-    * The api user sets "api/deleteCategory/889" path parameters.
+    * The api user sets "api/deleteCategory/896" path parameters.
     # Api kullanicisi "api/deleteCategory/id" path parametrelerini olusturur
     * The api user sends a DELETE request and saves the returned response.
     # Api kullanicisi DELETE request gonderir ve donen responsei kaydeder
@@ -63,17 +63,18 @@ Feature: As an administrator, I want to be able to delete course category inform
     # Api kullanicisi "invalid" token ile base urli olusturur
     * The api user sets "api/deleteCategory/889" path parameters.
     # Api kullanicisi "api/deleteCategory/id" path parametrelerini olusturur
-    * The api user sends a DELETE request and saves the returned response.
-    # Api kullanicisi DELETE request gonderir ve donen responsei kaydeder
-    * The api user verifies that the status code is 401.
-    # Api kullanicisi status codeun 401 oldugunu dogrular
-    * The api user verifies that the "message" information in the response body is "Unauthenticated.".
-    # Api kullanicisi response bodydeki message bilgisinin "Unauthenticated." oldugunu dogrular
 
-   # * The api user sends a DELETE request, saves the returned response, and verifies that the status code is '401' with the reason phrase Unauthorized.
+    #* The api user sends a DELETE request and saves the returned response.
+    ## Api kullanicisi DELETE request gonderir ve donen responsei kaydeder
+    #* The api user verifies that the status code is 401.
+    ## Api kullanicisi status codeun 401 oldugunu dogrular
+    #* The api user verifies that the "message" information in the response body is "Unauthenticated.".
+    ## Api kullanicisi response bodydeki message bilgisinin "Unauthenticated." oldugunu dogrular
+
+    * The api user sends a DELETE request, saves the returned response, and verifies that the status code is '401' with the reason phrase Unauthorized.
     # Api kullanicisi DELETE request gonderir, donen responsei kaydeder, status codeun '401' ve reason phrase bilgisinin Unauthorized oldugunu dogrular
 
-
+  @API
   Scenario Outline: Verify that the deleted course category via API is successfully deleted by sending a GET request to
   /api/category/{id} using the Deleted Category ID from the response.
 
@@ -88,6 +89,6 @@ Feature: As an administrator, I want to be able to delete course category inform
 
     Examples:
       | id  |
-      | 889 |
+      | 896 |
 
 
